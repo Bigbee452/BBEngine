@@ -14,4 +14,4 @@ add_library(PokerEngine
     "windowManager.h"
 )
 
-target_link_libraries(PokerEngine PRIVATE glad glfw glfw)
+target_link_libraries(PokerEngine PRIVATE glad glfw assimp)
