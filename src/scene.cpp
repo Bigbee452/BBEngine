@@ -4,7 +4,6 @@
 #include <string>
 #include "model.h"
 #include "shader.h"
-#include "utils.h"
 
 std::string execute_path;
 
