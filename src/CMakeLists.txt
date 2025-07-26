@@ -15,3 +15,7 @@ add_library(PokerEngine
 )
 
 target_link_libraries(PokerEngine PRIVATE glad glfw assimp)
+
+target_include_directories(PokerEngine PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
