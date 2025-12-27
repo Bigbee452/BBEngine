@@ -36,6 +36,6 @@ set(RMLUI_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 add_subdirectory(external/RmlUi)
 
 add_subdirectory(src)
-target_include_directories(poker-client PRIVATE include)
+target_include_directories(BBEngine PRIVATE include)
 
-target_link_libraries(poker-client PRIVATE glad glfw assimp SFML::Network RmlUi::Core RmlUi::Debugger)
+target_link_libraries(BBEngine PRIVATE glad glfw assimp SFML::Network RmlUi::Core RmlUi::Debugger)
