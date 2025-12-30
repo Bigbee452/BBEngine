@@ -9,6 +9,7 @@ set(ENGINE_SRC  "camera.cpp"
                 "windowManager.cpp"
                 "windowManager.h"
                 "gui.cpp"
+                "opengl/openGLWindowManager.cpp"
                 "../include/stb_image.h"
                 "../include/stb_image.cpp")
 
