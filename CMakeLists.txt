@@ -13,6 +13,8 @@ find_package(glfw3 REQUIRED)
 add_library(glad external/glad/src/glad.c)
 target_include_directories(glad PUBLIC external/glad/include)
 
+add_subdirectory(external/glm)
+
 set(SFML_BUILD_AUDIO FALSE CACHE BOOL "" FORCE)
 set(SFML_BUILD_GRAPHICS FALSE CACHE BOOL "" FORCE)
 set(SFML_BUILD_WINDOW FALSE CACHE BOOL "" FORCE)
@@ -29,8 +31,6 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_subdirectory(external/glm)
-
 set(RMLUI_BUILD_SAMPLES OFF CACHE BOOL "" FORCE)
 set(RMLUI_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 add_subdirectory(external/RmlUi)
@@ -38,4 +38,4 @@ add_subdirectory(external/RmlUi)
 add_subdirectory(src)
 target_include_directories(BBEngine PRIVATE include)
 
-target_link_libraries(BBEngine PRIVATE glad glfw assimp SFML::Network RmlUi::Core RmlUi::Debugger)
+target_link_libraries(BBEngine PRIVATE glad glfw assimp SFML::Network RmlUi::Core RmlUi::Debugger glm::glm)

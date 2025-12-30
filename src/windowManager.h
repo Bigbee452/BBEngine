@@ -1,28 +1,28 @@
 #pragma once
 #include "scene.h"
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
 
 #include "gui.h"
 
 class Window {
 public:
     Window();
-    ~Window();
+    virtual ~Window() = default;
     bool init(int width, int height);
     void setScene(Scene* in_scene);
-    void render_frame();
-    bool shouldStop();
-    bool getKey(int key);
+    virtual void render_frame();
+    virtual bool shouldStop();
+    virtual bool getKey(int key);
 
     static inline Gui* gui;
-private:
-    GLFWwindow* window;
+protected:
     static inline Scene* scene;
-    static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-    static void processInput(GLFWwindow *window);
-    static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
-    static void character_callback(GLFWwindow* window, unsigned int codepoint);
-    static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
-    static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+    virtual bool initRenderer(int width, int height);
+    static void framebuffer_size_callback(int width, int height);
+    static void processInput();
+    static void key_callback(int key, int scancode, int action, int mods);
+    static void character_callback(unsigned int codepoint);
+    static void cursor_position_callback(double xpos, double ypos);
+    static void mouse_button_callback(int button, int action, int mods);
 };
+
+Window* getWindow();
