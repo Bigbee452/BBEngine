@@ -37,5 +37,6 @@ add_subdirectory(external/RmlUi)
 
 add_subdirectory(src)
 target_include_directories(BBEngine PRIVATE include)
+target_include_directories(BBEngine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_link_libraries(BBEngine PRIVATE glad glfw assimp SFML::Network RmlUi::Core RmlUi::Debugger glm::glm)
