@@ -10,13 +10,13 @@ public:
     bool init(int width, int height);
     void setScene(Scene* in_scene);
     virtual void render_frame();
-    virtual bool shouldStop();
-    virtual bool getKey(int key);
+    virtual bool shouldStop() = 0;
+    virtual bool getKey(int key) = 0;
 
     static inline Gui* gui;
 protected:
     static inline Scene* scene;
-    virtual bool initRenderer(int width, int height);
+    virtual bool initRenderer(int width, int height) = 0;
     static void framebuffer_size_callback(int width, int height);
     static void processInput();
     static void key_callback(int key, int scancode, int action, int mods);

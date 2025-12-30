@@ -12,4 +12,4 @@ set(ENGINE_SRC  "camera.cpp"
                 "../include/stb_image.h"
                 "../include/stb_image.cpp")
 
-add_library(BBEngine ${ENGINE_SRC})
+add_library(BBEngine STATIC ${ENGINE_SRC})
