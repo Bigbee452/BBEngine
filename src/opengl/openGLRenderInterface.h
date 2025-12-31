@@ -1,0 +1,36 @@
+#pragma once
+#include <RmlUi/Core.h>
+
+#include "../mesh.h"
+
+class OpenGLRenderInterface : public Rml::RenderInterface
+{
+	Rml::CompiledGeometryHandle CompileGeometry(Rml::Span<const Rml::Vertex> vertices, Rml::Span<const int> indices) override;
+
+    void RenderGeometry(Rml::CompiledGeometryHandle geometry, Rml::Vector2f translation, Rml::TextureHandle texture) override;
+
+    void ReleaseGeometry(Rml::CompiledGeometryHandle geometry) override;
+
+    Rml::TextureHandle LoadTexture(Rml::Vector2i& texture_dimensions, const Rml::String& source) override;
+
+    Rml::TextureHandle GenerateTexture(Rml::Span<const Rml::byte> source, Rml::Vector2i source_dimensions) override;
+
+    void ReleaseTexture(Rml::TextureHandle texture) override;
+
+    void EnableScissorRegion(bool enable) override;    
+
+    virtual void SetScissorRegion(Rml::Rectanglei region) override;
+ 
+    Texture* white_texture;
+
+public:
+    OpenGLRenderInterface();
+};
+
+class ButtonListener : public Rml::EventListener {
+public:
+    ButtonListener(bool* boolCallBack);
+    void ProcessEvent(Rml::Event& event) override;
+private:
+    bool* Pressed;
+};

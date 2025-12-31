@@ -3,6 +3,9 @@
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/fwd.hpp>
 #include <iostream>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 struct Model::AssimpImpl {
     vector<Texture> loadMaterialTextures(Model* owner, aiMaterial *mat, aiTextureType type, string typeName)

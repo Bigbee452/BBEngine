@@ -3,12 +3,10 @@
 #include <glm/glm.hpp>
 #include <vector>
 #include <string>
-#include <glad/glad.h>
 
 #include "indexBuffer.h"
 #include "shader.h"
 #include "vertexBuffer.h"
-#include "../../include/stb_image.h"
 
 using namespace std;
 

@@ -1,5 +1,6 @@
+#include "../../include/stb_image.h"
+
 #include "windowManager.h"
-#include "mesh.h"
 #include "scene.h"
 
 #include "opengl/openGLWindowManager.h"

@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <glad/glad.h>
+#include "../../include/stb_image.h"
 
 Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices)
 {
