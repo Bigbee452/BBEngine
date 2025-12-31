@@ -1,5 +1,4 @@
 #include "gui.h"
-#include <glad/glad.h>
 #include <memory>
 #include <vector>
 #include <RmlUi/Core.h>
@@ -8,12 +7,6 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include <iostream>
 #include <vector>
-#include "RmlUi/Core/Context.h"
-#include "RmlUi/Core/Core.h"
-#include "RmlUi/Core/Input.h"
-#include "RmlUi/Core/Math.h"
-#include "RmlUi/Core/SystemInterface.h"
-#include "RmlUi/Core/Types.h"
 #include "mesh.h"
 #include "opengl/openGLRenderInterface.h"
 
