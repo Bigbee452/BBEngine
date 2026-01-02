@@ -18,6 +18,7 @@ public:
     void showObject(bool show);
     void bindString(string name, string* bindString);
     void bindButton(bool* callback);
+    void setText(string id, string text);
 
     string name = "None";
 private:
@@ -65,6 +66,15 @@ void GuiObject::showObject(bool show){
         return;
     }
     document->Hide();
+}
+
+void GuiObject::setText(string id, string text){
+    if(!document){
+        return;
+    }
+    if(auto* el = document->GetElementById(id)){
+        el->SetInnerRML(text);
+    }    
 }
 
 void GuiObject::bindButton(bool* callback){
@@ -185,6 +195,15 @@ void Gui::showElement(string name, bool show){
             return;
         }
     }    
+}
+
+void Gui::SetElementText(string name, string id, string text){
+    for(GuiObject* element : rmlImpl->objects){
+        if(element->name == name){
+            element->setText(id, text);
+            return;
+        }
+    }      
 }
 
 void Gui::changeContextDimensions(int width, int height){

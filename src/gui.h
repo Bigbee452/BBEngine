@@ -27,6 +27,7 @@ public:
     void initElement(string name);
     void deleteElement(string name);
     void bindButtonToElement(string name, bool* callback);
+    void SetElementText(string name, string id, string text);
 
     void changeContextDimensions(int width, int height);
     void processKeyDown(int key);
