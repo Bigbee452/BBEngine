@@ -26,7 +26,7 @@ public:
     void bindStringToElement(string name, string dataName, string* bindString);
     void initElement(string name);
     void deleteElement(string name);
-    void bindButtonToElement(string name, bool* callback);
+    void bindButtonToElement(string name, string id, bool* callback);
     void SetElementText(string name, string id, string text);
 
     void changeContextDimensions(int width, int height);

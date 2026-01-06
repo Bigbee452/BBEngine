@@ -17,7 +17,7 @@ public:
     void makeDocument(Rml::Context* context);
     void showObject(bool show);
     void bindString(string name, string* bindString);
-    void bindButton(bool* callback);
+    void bindButton(bool* callback, string id);
     void setText(string id, string text);
 
     string name = "None";
@@ -77,8 +77,8 @@ void GuiObject::setText(string id, string text){
     }    
 }
 
-void GuiObject::bindButton(bool* callback){
-    Rml::Element* button = document->GetElementById("manageClick");
+void GuiObject::bindButton(bool* callback, string id){
+    Rml::Element* button = document->GetElementById(id);
     if(button){
         button->AddEventListener("click", new ButtonListener(callback));
     } else {
@@ -179,10 +179,10 @@ void Gui::bindStringToElement(string name, string dataName, string* bindString){
     }       
 }
 
-void Gui::bindButtonToElement(string name, bool* callback){
+void Gui::bindButtonToElement(string name, string id, bool* callback){
     for(GuiObject* element : rmlImpl->objects){
         if(element->name == name){
-            element->bindButton(callback);
+            element->bindButton(callback, id);
             return;
         }
     }       
